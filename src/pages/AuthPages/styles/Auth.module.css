@@ -1,0 +1,57 @@
+.wrapper {
+
+    /* background-image: url('https://media.istockphoto.com/id/487774484/vector/cute-cartoon-ghost-pattern.jpg?s=612x612&w=0&k=20&c=OO5juZ5Cn0eWSYgM-uquO2gcOEM-nZqrLxNmMBZzIRI='); */
+
+    /* Frame 4 */
+
+    /* Frame 4 */
+    background: radial-gradient(
+      114.88% 43.71% at 50.03% 103.4%,
+      rgb(127 238 109 / 20%) 0%,
+      #2c2c2c 58.5%
+    );
+  }
+  
+  .overlay {
+    backdrop-filter: brightness(40%);
+  }
+  
+  .inner {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .decor_img {
+    border: 2px solid var(--accent-color);
+    border-radius: 200px;
+  }
+
+  .form {
+    display: flex;
+    width: 100%;
+    max-width: 320px;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: var(--section-color);
+    gap: 20px;
+  }
+
+  .title {
+    display: flex;
+    margin-bottom: 12px;
+    gap: 8px;
+  }
+
+  .title_acent {
+    color: var(--accent-color);
+  }
+  
+  
+  .link {
+      text-decoration: underline;
+    }
+    

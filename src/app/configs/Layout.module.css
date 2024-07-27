@@ -1,0 +1,9 @@
+.wrapper {
+  padding-block: 20px;
+}
+
+.inner {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 160px auto;
+}

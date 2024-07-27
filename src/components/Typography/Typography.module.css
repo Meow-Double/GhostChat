@@ -1,0 +1,24 @@
+.typography {
+  line-height: 100%;
+}
+
+.title24_bold {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.title20_bold {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.title16_bold {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+.paragraph16_regular{
+  font-size: 16px;
+  font-weight: 400;
+}

@@ -1,0 +1,8 @@
+.wrapper {
+    background-color: var(--section-color);
+    padding-block: 40px;
+  }
+
+  .inner{
+    text-align: center;
+  }

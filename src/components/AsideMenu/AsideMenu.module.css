@@ -1,0 +1,24 @@
+.aside {
+  width: 100%;
+  max-width: 160px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu_item {
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+
+  &:hover {
+    background-color: var(--section-color);
+  }
+}
+
+.active {
+  color: var(--accent-color);
+}

@@ -13,7 +13,7 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   plugins: ['simple-import-sort', 'prettier'],
-  ignorePatterns: ['dist', 'coverage'],
+  ignorePatterns: ['dist', 'coverage', "vite.config.ts"],
   parserOptions: {
     ecmaFeatures: { jsx: true },
     ecmaVersion: 'latest',
@@ -127,7 +127,9 @@ module.exports = {
         ['store', '@/store'],
         ['styles', '@/styles'],
         ['types', '@/types'],
-        ['utils', '@/utils']
+        ['utils', '@/utils'],
+        ['shared', '@/shared'],
+        ['styles', './**.css']
       ]
     }
   }
