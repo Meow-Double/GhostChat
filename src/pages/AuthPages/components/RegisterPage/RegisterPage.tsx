@@ -7,8 +7,12 @@ import styles from '../../styles/Auth.module.css';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { RegisterSchema, registerSchema } from '../../constans/RegisterSchema';
+import { useAppDispatch } from '@/store/hooks/useAppDispatch';
+import { fetchRegister } from '@/store/slices/userSlice/userSlice';
 
 export const RegisterPage = () => {
+  const dispatch = useAppDispatch();
+
   const {
     register,
     handleSubmit,
@@ -19,7 +23,8 @@ export const RegisterPage = () => {
   });
 
   const onSubmit = (values: RegisterSchema) => {
-    alert(JSON.stringify(values));
+    const { confirmPassword, ...data } = values;
+    dispatch(fetchRegister(data));
   };
 
   return (

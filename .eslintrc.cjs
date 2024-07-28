@@ -13,7 +13,7 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   plugins: ['simple-import-sort', 'prettier'],
-  ignorePatterns: ['dist', 'coverage', "vite.config.ts"],
+  ignorePatterns: ['dist', 'coverage', 'vite.config.ts'],
   parserOptions: {
     ecmaFeatures: { jsx: true },
     ecmaVersion: 'latest',
@@ -23,7 +23,7 @@ module.exports = {
     'max-len': 'off',
     'consistent-return': 'off',
     'no-shadow': 'off',
-    'no-param-reassign': 'warn',
+    'no-param-reassign': [2, { props: false }],
     'no-template-curly-in-string': 'off',
     'no-console': ['warn', { allow: ['info', 'error'] }],
     'react/prop-types': 'off',
