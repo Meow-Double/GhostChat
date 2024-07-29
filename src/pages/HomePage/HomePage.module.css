@@ -25,4 +25,5 @@
   max-height: 260px;
   border: 1px solid var(--accent-color);
   border-radius: 200px;
+  object-fit: cover;
 }

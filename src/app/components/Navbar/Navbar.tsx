@@ -3,6 +3,11 @@ import { Typography } from '@/components';
 import styles from './Navbar.module.css';
 
 export const Navbar = () => {
+  const onExit = () => {
+    localStorage.removeItem('token');
+    window.location.reload();
+  };
+
   return (
     <nav className={styles.wrapper}>
       <div className='container'>
@@ -25,8 +30,11 @@ export const Navbar = () => {
               alt='avatarka'
             />
           </div>
+          <button onClick={onExit}>exit</button>
         </div>
       </div>
     </nav>
   );
 };
+
+

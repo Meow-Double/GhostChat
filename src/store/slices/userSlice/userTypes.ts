@@ -1,8 +1,7 @@
 export interface UserTypes {
   name: string;
   email: string;
-  token: Nullable<string>;
+  avatarUrl: string;
+  token: null | string;
   error: boolean;
 }
-
-type Nullable<Types> = null | Types;

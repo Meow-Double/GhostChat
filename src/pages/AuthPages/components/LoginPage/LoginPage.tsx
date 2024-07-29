@@ -7,8 +7,12 @@ import styles from '../../styles/Auth.module.css';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { LoginSchema, loginSchema } from '../../constans/LoginSchema';
+import { useAppDispatch } from '@/store/hooks/useAppDispatch';
+import { fetchLogin } from '@/store/slices/userSlice/userSlice';
 
 export const LoginPage = () => {
+  const dispatch = useAppDispatch();
+
   const {
     register,
     handleSubmit,
@@ -19,7 +23,7 @@ export const LoginPage = () => {
   });
 
   const onSubmit = (values: LoginSchema) => {
-    alert(JSON.stringify(values));
+    dispatch(fetchLogin({ ...values }));
   };
 
   return (

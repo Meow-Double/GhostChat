@@ -6,4 +6,4 @@ export type PostRegisterParams = Omit<RegisterSchema, 'confirmPassword'>;
 type PostRegisterConfig = AxiosRequestConfig<PostRegisterParams>;
 
 export const postRegister = ({ params, config }: PostRegisterConfig) =>
-  api.post<RegisterAnswer>('/auth/register', params, config);
+  api.post<AuthSuccessAnswer>('/auth/register', params, config);
