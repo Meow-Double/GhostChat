@@ -1,0 +1,17 @@
+.title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search {
+  display: grid;
+  margin-bottom: 20px;
+  gap: 20px;
+  grid-template-columns: auto 120px;
+}
+
+.people {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

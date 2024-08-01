@@ -24,3 +24,13 @@ interface GetMeData {
   updatedAt: string;
   __v: number;
 }
+
+interface GetUsers {
+  users: Array<GetUser>;
+}
+
+type GetUser = {
+  name: string;
+  avatarUrl: string;
+  _id: string;
+};

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import styles from './Button.module.css';
 
-type ButtonVariant = 'primary';
+type ButtonVariant = 'primary' | 'outlined';
 
 interface ButtonProps extends ComponentProps<'button'> {
   variant: ButtonVariant;

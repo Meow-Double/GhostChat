@@ -1,0 +1,45 @@
+.person {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.title {
+  cursor: pointer;
+}
+
+.img {
+  width: 64px;
+  height: 64px;
+  border: 1px solid #fff;
+  border-radius: 200px;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn_block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.1s ease;
+
+  &:hover {
+    background-color: #272727;
+  }
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}

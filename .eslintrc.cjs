@@ -26,6 +26,7 @@ module.exports = {
     'no-param-reassign': [2, { props: false }],
     'no-template-curly-in-string': 'off',
     'no-console': ['warn', { allow: ['info', 'error'] }],
+    'no-underscore-dangle': ['error', { allow: ['_id'] }],
     'react/prop-types': 'off',
     'react/jsx-indent': 'off',
     'react/no-children-prop': 'off',

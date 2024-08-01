@@ -32,3 +32,8 @@
   border-radius: 200px;
   object-fit: cover;
 }
+
+.exit {
+  width: 42px;
+  height: 42px;
+}

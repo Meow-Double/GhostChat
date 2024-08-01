@@ -39,6 +39,7 @@ const initialState: UserTypes = {
   name: '',
   email: '',
   avatarUrl: 'http://localhost:4000/uploads/randomAvatarka/img1.jpg',
+  id: '',
   token: null,
   error: false
 };
@@ -53,12 +54,14 @@ const userSlice = createSlice({
       state.name = action.payload.name;
       state.avatarUrl = action.payload.avatarUrl;
       state.token = action.payload.token;
+      state.id = action.payload._id;
       state.error = false;
     });
     builder.addCase(fetchRegister.rejected, (state) => {
       state.email = '';
       state.name = '';
       state.token = '';
+      state.id = '';
       state.error = true;
     });
     // ------------------------------------------------------------------------------------------------
@@ -67,12 +70,14 @@ const userSlice = createSlice({
       state.name = action.payload.name;
       state.avatarUrl = action.payload.avatarUrl;
       state.token = action.payload.token;
+      state.id = action.payload._id;
       state.error = false;
     });
     builder.addCase(fetchLogin.rejected, (state) => {
       state.email = '';
       state.name = '';
       state.token = '';
+      state.id = '';
       state.error = true;
     });
     // ------------------------------------------------------------------------------------------------
@@ -83,6 +88,7 @@ const userSlice = createSlice({
         state.name = action.payload.data.name;
         state.avatarUrl = action.payload.data.avatarUrl;
         state.token = action.payload.token;
+        state.id = action.payload.data._id;
         state.error = false;
       }
     );
@@ -90,6 +96,7 @@ const userSlice = createSlice({
       state.email = '';
       state.name = '';
       state.token = '';
+      state.id = '';
       state.error = true;
     });
   }

@@ -1,8 +1,14 @@
 import { Typography } from '@/components';
 
 import styles from './Navbar.module.css';
+import { Button } from '@/shared';
+import { useAppSelector } from '@/store/hooks';
+import { userSelect } from '@/store/slices/userSlice';
+import ExitSvg from '@/assets/svg/exit.svg';
 
 export const Navbar = () => {
+  const user = useAppSelector(userSelect);
+
   const onExit = () => {
     localStorage.removeItem('token');
     window.location.reload();
@@ -21,20 +27,18 @@ export const Navbar = () => {
             </Typography>
           </div>
           <div className={styles.profile_info}>
-            <Typography className={styles.title_accent} tag='h4' variant='title20_bold'>
-              User1
-            </Typography>
-            <img
-              className={styles.profile_img}
-              src='https://avatars.dzeninfra.ru/get-zen_doc/3963198/pub_5f459a20399c585d21b14752_5f459db39017592ff324e667/scale_1200'
-              alt='avatarka'
-            />
+            <div className={styles.profile_info}>
+              <Typography className={styles.title_accent} tag='h4' variant='title20_bold'>
+                {user.name}
+              </Typography>
+              <img className={styles.profile_img} src={user.avatarUrl} alt='avatarka' />
+            </div>
+            <Button variant='outlined' onClick={onExit}>
+              <img className={styles.exit} src={ExitSvg} alt='exit' />
+            </Button>
           </div>
-          <button onClick={onExit}>exit</button>
         </div>
       </div>
     </nav>
   );
 };
-
-

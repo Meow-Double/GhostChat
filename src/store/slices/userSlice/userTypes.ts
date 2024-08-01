@@ -4,4 +4,5 @@ export interface UserTypes {
   avatarUrl: string;
   token: null | string;
   error: boolean;
+  id: string;
 }
