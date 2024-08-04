@@ -13,7 +13,7 @@
   width: 100%;
   padding: 12px;
   gap: 12px;
-  grid-template-columns: auto 120px;
+  grid-template-columns: auto 48px 120px;
 }
 
 .chat {
@@ -31,6 +31,7 @@
   min-width: 80px;
   max-width: 560px;
   padding: 12px 20px;
+  border: 1px solid transparent;
   border-radius: 4px;
   background-color: var(--section-color);
   white-space: normal;
@@ -40,4 +41,25 @@
 .me {
   align-self: flex-end;
   border-color: var(--primary-color);
+}
+
+.emoji {
+  position: relative;
+  cursor: pointer;
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.emoji_icon {
+  padding: 16px;
+  border-radius: 4px;
+  background-color: var(--section-color);
+}
+
+.emojies {
+  position: absolute;
+  bottom: 100%;
+  left: 100%;
 }

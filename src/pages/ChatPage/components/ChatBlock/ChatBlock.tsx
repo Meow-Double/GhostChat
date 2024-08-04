@@ -5,6 +5,8 @@ import store from '@/store/store';
 import { setMessages } from '@/store/slices/messagesSlice/messagesSlice';
 import { useEffect, useRef, useState } from 'react';
 import socket from '@/assets/socket';
+import EmojiPicker from 'emoji-picker-react';
+import EmojiSvg from "@/assets/svg/emoji.svg";
 
 interface ChatBlockParams {
   messages: GetChatMessages;
@@ -13,6 +15,8 @@ interface ChatBlockParams {
   dispatch: typeof store.dispatch;
 }
 export const ChatBlock = ({ messages, userId, dispatch, chatId }: ChatBlockParams) => {
+  const [isOpen, setOpen] = useState(false);
+
   const [messageText, setMessageText] = useState('');
   const blockRef = useRef(null);
 
@@ -34,6 +38,8 @@ export const ChatBlock = ({ messages, userId, dispatch, chatId }: ChatBlockParam
     dispatch(setMessages({ message: messageText, sendId: userId }));
     setMessageText('');
   };
+
+  const onEmojiClick = ({ emoji }: any) => setMessageText(`${messageText} ${emoji}`);
 
   return (
     <div className={styles.inner}>
@@ -66,6 +72,15 @@ export const ChatBlock = ({ messages, userId, dispatch, chatId }: ChatBlockParam
             }
           }}
         />
+        <div className={styles.emoji}>
+          <img className={styles.emoji_icon} src={EmojiSvg} alt='emoji' onClick={() => setOpen((prev) => !prev)} />
+
+          {isOpen && (
+            <div className={styles.emojies}>
+              <EmojiPicker className={styles.picker} onEmojiClick={onEmojiClick} />
+            </div>
+          )}
+        </div>
         <Button variant='primary' onClick={sendMessage}>
           Отправить
         </Button>
