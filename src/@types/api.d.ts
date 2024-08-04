@@ -34,3 +34,18 @@ type GetUser = {
   avatarUrl: string;
   _id: string;
 };
+
+interface GetChat {
+  name: string;
+  avatarUrl: string;
+  chatId: string;
+}
+
+type GetChats = Array<GetChat>;
+
+type GetChatMessages = Array<MessgaeType>;
+
+type MessgaeType = {
+  sendId: string;
+  message: string;
+};

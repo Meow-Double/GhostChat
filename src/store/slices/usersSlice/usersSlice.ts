@@ -15,7 +15,7 @@ interface FetchUsersParams {
   params?: ParamsTypes;
 }
 export const fetchUsers = createAsyncThunk(
-  'user/fetchUsers',
+  'users/fetchUsers',
   async ({ token, params }: FetchUsersParams) => {
     const response = await getUsers({
       config: {

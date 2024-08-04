@@ -2,8 +2,9 @@ import { Button } from '@/shared';
 import styles from './FriendCard.module.css';
 import { Typography } from '@/components';
 import MessageSvg from '@/assets/svg/message.svg';
-import AddFriendSvg from '@/assets/svg/addFriend.svg';
 import { useNavigate } from 'react-router-dom';
+import { postCreateChat } from '@/api/requests/create-chat';
+import socket from '@/assets/socket';
 
 interface FriendCardProps {
   _id: string;
@@ -18,9 +19,18 @@ export const FriendCard = ({ _id, avatarUrl, name }: FriendCardProps) => {
     navigate(`/profile/${_id}`);
   };
 
-  const openChat = () => {
-    
-  }
+  const token = JSON.parse(window.localStorage.getItem('token') ?? '');
+
+  const openChat = async () => {
+    const { data } = await postCreateChat({
+      params: { id: _id },
+      config: { headers: { Authorization: `Bearer ${token}` } }
+    });
+
+    socket.emit('CHAT:CREATE', { name, chatId: data, avatarUrl });
+
+    navigate(`/chat/${data}`);
+  };
 
   return (
     <li className={styles.person}>
@@ -39,9 +49,9 @@ export const FriendCard = ({ _id, avatarUrl, name }: FriendCardProps) => {
         <Button className={styles.btn} variant='outlined' onClick={openChat}>
           <img className={styles.icon} src={MessageSvg} alt='write message' />
         </Button>
-        <Button className={styles.btn} variant='outlined'>
+        {/* <Button className={styles.btn} variant='outlined'>
           <img className={styles.icon} src={AddFriendSvg} alt='add to friends' />
-        </Button>
+        </Button> */}
       </div>
     </li>
   );

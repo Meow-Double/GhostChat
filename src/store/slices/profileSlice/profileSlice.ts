@@ -4,7 +4,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getUser } from '@/api/requests/user';
 import type { RootState } from '@/store/store';
 
-export const fetchUser = createAsyncThunk('user/fetchUser', async (id: string) => {
+export const fetchUser = createAsyncThunk('profile/fetchUser', async (id: string) => {
   const response = await getUser({ id });
 
   return response.data;

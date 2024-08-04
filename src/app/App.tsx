@@ -12,7 +12,7 @@ const App = () => {
   const dispatch = useAppDispatch();
   const { token } = useAppSelector(userSelect);
   const navigate = useNavigate();
-  const {id} = useAppSelector(state => state.user)
+  const { id } = useAppSelector((state) => state.user);
 
   useEffect(() => {
     if (token) {
@@ -39,6 +39,7 @@ const App = () => {
           </Route> */}
           <Route path={ROUTES.CHAT} element={<Layout />}>
             <Route index element={<ChatPage />} />
+            <Route path=":id" element={<ChatPage />} />
           </Route>
           <Route path={ROUTES.FRIENDS} element={<Layout />}>
             <Route index element={<FriendsPage />} />
